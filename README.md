@@ -1,34 +1,29 @@
-# Evidencia Demonstración de un Paradigma de Programación
+# Evidencia-Demostracion-Paradigma-Funcional
 
 ## Inaki Mancera Llano
 
 ## Problema seleccionado
-Para esta evidencia se seleccionó el problema **Codeforces 266A - Stones on the Table**.
-Link al problema:  
-https://codeforces.com/problemset/problem/266/A
+Codeforces 1158A - The Party and Sweets  
+Link: https://codeforces.com/problemset/problem/1158/A
 
-## Paradigma utilizado
-Programación funcional usando DrRacket.
+## Contexto
+Esta evidencia resuelve un problema de programación competitiva utilizando el paradigma funcional. El problema consiste en encontrar la mínima suma total posible de dulces en una matriz donde las filas representan niños y las columnas representan niñas.
 
-## Descripción del problema
-El problema presenta una fila de piedras de colores. Cada piedra está representada por una letra:
-- "R": Red / rojo
-- "G": Green / verde
-- "B": Blue / azul
+La lista de niños representa los mínimos por fila, mientras que la lista de niñas representa los máximos por columna. Si no existe una matriz que cumpla esas condiciones, la respuesta debe ser -1.
 
-El objetivo es contar cuántas piedras se deben retirar como mínimo para que no existan dos piedras juntas del mismo color.
+## Paradigma principal
+El paradigma principal utilizado es programación funcional en DrRacket. La solución se basa en funciones recursivas, procesamiento de listas, cond y transformación de datos sin usar variables mutables.
 
-Ejemplo:
-Entrada:
-RRG
+## Implementación
+El archivo principal es PyS.rkt. En él se implementan funciones auxiliares propias para sumar y ordenar listas:
 
-Piedras:
-R R G
+- sum-list: suma recursivamente los valores de una lista.
+- split-list: divide una lista en dos partes.
+- merge: combina dos listas ordenadas.
+- merge-sort: ordena una lista mediante divide y vencerás.
+- party-and-sweets: resuelve el problema principal.
 
-Las dos primeras piedras tienen el mismo color, por lo tanto se debe retirar una.
+Las pruebas están en pruebas.rkt y llaman directamente a la función party-and-sweets con listas ya definidas.
 
-Salida:
-1
-
-## Cómo ejecutar
-Abrir "TableStones_Funcional.rkt" en DrRacket y presionar Run.
+Para correr las pruebas en terminal donde esten los documentos:
+- racket tests.rkt
